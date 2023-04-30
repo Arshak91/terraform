@@ -15,7 +15,7 @@ To use this Terraform configuration, follow these steps:
 
 1. Clone this repository to your local machine.
 2. Navigate to the repository directory using your terminal or command prompt.
-3. Create a file named terraform.tfvars in the repository directory, and specify the values for the variables used in the configuration. An example terraform.tfvars file is provided in the repository.
+3. Change values variables in terraform.tfvars if you need.
 4. Initialize the backend and download the required plugins by running the command terraform init.
 5. Preview the changes that Terraform will make to your infrastructure by running the command terraform plan -var-file=variables.tfvars.
 6. Apply the changes by running the command terraform apply -var-file=variables.tfvars.
