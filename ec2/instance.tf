@@ -51,9 +51,6 @@ resource "aws_instance" "web" {
       "sudo apt update",
       "sudo apt install terraform -y",
 
-      "sudo apt update",
-      "sudo scp -o StrictHostKeyChecking=no -i ${file(var.private_key_path)} ${file(var.private_key_path)} ubuntu@${self.public_dns}:/home/ubuntu"
-
     ]
   }
   tags = {
@@ -64,3 +61,4 @@ resource "aws_instance" "web" {
 output "aws_instance" {
   value = aws_instance.web
 }
+# sudo scp -i ./Desktop/pem/virginia.pem ./Desktop/pem/virginia.pem ubuntu@ec2-3-239-68-222.compute-1.amazonaws.com:/home/ubuntu
