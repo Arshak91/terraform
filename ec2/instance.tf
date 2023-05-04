@@ -1,7 +1,7 @@
 
 variable "private_key_path" {
   type    = string
-  default = "./../../../pem/virginia.pem"
+  default = "./../../../../Desktop/pem/virginia.pem"
 }
 variable "instance_type" {
   type    = string
@@ -50,7 +50,6 @@ resource "aws_instance" "web" {
       "echo \"deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main\" | sudo tee /etc/apt/sources.list.d/hashicorp.list",
       "sudo apt update",
       "sudo apt install terraform -y",
-
     ]
   }
   tags = {
@@ -61,4 +60,4 @@ resource "aws_instance" "web" {
 output "aws_instance" {
   value = aws_instance.web
 }
-# sudo scp -i ./Desktop/pem/virginia.pem ./Desktop/pem/virginia.pem ubuntu@ec2-3-239-68-222.compute-1.amazonaws.com:/home/ubuntu
+# "sudo scp -i ./Desktop/pem/virginia.pem ./Desktop/pem/virginia.pem ubuntu@${self.public_dns}:/home/ubuntu"
